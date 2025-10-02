@@ -45,10 +45,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(MSBuildProjectDirectory)\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)..\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(MSBuildProjectDirectory)\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -56,16 +56,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\include\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\include;$(MSBuildProjectDirectory)\..\include\glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)..\libs\freeglut\x64\freeglut.lib;$(ProjectDir)..\libs\glew\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(MSBuildProjectDirectory)\..\libs\freeglut\x64\freeglut.lib;$(MSBuildProjectDirectory)\..\libs\glew\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(ProjectDir)..\libs\glew\x64\glew32.dll" "$(OutDir)"
-copy "$(ProjectDir)..\libs\freeglut\x64\freeglut.dll" "$(OutDir)"</Command>
+      <Command>copy "$(MSBuildProjectDirectory)\..\libs\glew\x64\glew32.dll" "$(OutDir)"
+copy "$(MSBuildProjectDirectory)\..\libs\freeglut\x64\freeglut.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -76,18 +76,18 @@ copy "$(ProjectDir)..\libs\freeglut\x64\freeglut.dll" "$(OutDir)"</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\include\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\..\include;$(MSBuildProjectDirectory)\..\include\glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)..\libs\freeglut\x64\freeglut.lib;$(ProjectDir)..\libs\glew\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(MSBuildProjectDirectory)\..\libs\freeglut\x64\freeglut.lib;$(MSBuildProjectDirectory)\..\libs\glew\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(ProjectDir)..\libs\glew\x64\glew32.dll" "$(OutDir)"
-copy "$(ProjectDir)..\libs\freeglut\x64\freeglut.dll" "$(OutDir)"</Command>
+      <Command>copy "$(MSBuildProjectDirectory)\..\libs\glew\x64\glew32.dll" "$(OutDir)"
+copy "$(MSBuildProjectDirectory)\..\libs\freeglut\x64\freeglut.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
