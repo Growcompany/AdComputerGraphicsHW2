@@ -1,0 +1,15 @@
+#version 400 core
+
+layout(location = 0) in vec3 vertexPosition_modelspace; // 정점 위치 입력
+layout(location = 1) in vec2 vertexUV; // 텍스처 좌표 입력
+uniform mat4 MVP;
+
+out vec2 UV; // FragmentShader로 전달할 텍스처 좌표
+
+void main()
+{	
+	gl_Position = MVP * vec4(vertexPosition_modelspace, 1.0); // MVP 사용하여 3D 좌표 → 화면 좌표 변환
+	gl_PointSize = 5.0f;
+	
+	UV = vertexUV; // 텍스처 좌표를 FragmentShader로 전달
+}

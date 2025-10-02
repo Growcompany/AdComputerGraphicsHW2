@@ -1,0 +1,20 @@
+#version 400 core
+
+in vec2 UV; // VertexShader에서 받은 텍스처 좌표
+uniform vec3 materialColor; // 재질 색상 (MTL 파일에서 읽은 Kd 값)
+uniform sampler2D textureSampler; // 텍스처 샘플러
+uniform bool useTexture; // 텍스처 사용 여부
+out vec3 color;
+
+void main()
+{
+	if (useTexture) {
+		// [클로드 도움 : 텍스처 샘플링 사용법 물어보고 적용]
+		// 텍스처가 있다면 색상과 재질 색상을 곱함
+		vec4 textureColor = texture(textureSampler, UV);
+		color = textureColor.rgb * materialColor;
+	} else {
+		// 재질 색상만 사용
+		color = materialColor;
+	}
+}
